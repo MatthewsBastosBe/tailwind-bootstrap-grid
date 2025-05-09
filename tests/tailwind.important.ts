@@ -1,6 +1,6 @@
-const config = require('./tailwind.base');
+import config from './tailwind.base';
 
-module.exports = {
+export default {
   ...config,
   safelist: [
     {
@@ -16,4 +16,5 @@ module.exports = {
     },
   },
   plugins: [require('../lib')({ containerMaxWidths: {} })],
+  important: true,
 };

@@ -1,4 +1,4 @@
-const config = require('./tailwind.base');
+import config from './tailwind.base';
 
 module.exports = {
   ...config,
@@ -16,5 +16,4 @@ module.exports = {
     },
   },
   plugins: [require('../lib')({ containerMaxWidths: {} })],
-  important: true,
 };

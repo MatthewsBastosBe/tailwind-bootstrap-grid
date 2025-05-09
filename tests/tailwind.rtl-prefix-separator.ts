@@ -1,6 +1,6 @@
-const config = require('./tailwind.base');
+import config from './tailwind.base';
 
-module.exports = {
+export default {
   ...config,
   safelist: [
     {

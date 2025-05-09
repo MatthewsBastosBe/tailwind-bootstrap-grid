@@ -1,6 +1,6 @@
-const config = require('./tailwind.base');
+import config from './tailwind.base';
 
-module.exports = {
+export default {
   ...config,
   safelist: [
     {
@@ -18,11 +18,16 @@ module.exports = {
   plugins: [
     require('../lib')({
       gridColumns: 3,
-      containerMaxWidths: {
-        mobile: '20em',
-        tablet: '40em',
-        desktop: '60em',
+      gridGutterWidth: '1em',
+      gridGutters: {
+        0: 0,
+        1: '.25rem',
+        2: '.5rem',
+        3: '1rem',
+        4: '1.5rem',
+        5: '3rem',
       },
+      containerMaxWidths: {},
     }),
   ],
 };

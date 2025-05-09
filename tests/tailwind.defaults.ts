@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   safelist: [{ pattern: /./ }],
   corePlugins: [],
   plugins: [require('../lib')],

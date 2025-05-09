@@ -1,14 +1,16 @@
+import { expect } from 'vitest';
+
 const postcss = require('postcss');
 const prettier = require('prettier');
-const tailwindcss = require('tailwindcss');
+const tailwindcss = require('@tailwindcss/postcss');
 
 const CSS_INPUT = `
 @tailwind components;
 @tailwind utilities;
 `;
 
-module.exports = async (testFile) => {
-  const configFile = testFile.replace('.test.js', '.js');
+export default async (testFile: string) => {
+  const configFile = testFile.replace('.test.ts', '.ts');
 
   const result = await postcss()
     .use(tailwindcss(configFile))

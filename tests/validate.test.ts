@@ -1,4 +1,7 @@
-const validate = require('../lib/validate');
+import { it, expect } from 'vitest';
+
+import validate from '../lib/validate';
+import type { TailwindBootstrapGridOptions } from '../types';
 
 const screens = { sm: '540px', md: '720px', lg: '960px', xl: '1140px' };
 
@@ -11,11 +14,11 @@ const input = {
   rtl: false,
 };
 
-const valid = (options) => {
+const valid = (options: TailwindBootstrapGridOptions) => {
   expect(() => validate({ screens })(options)).not.toThrow();
 };
 
-const invalid = (options) => {
+const invalid = (options: TailwindBootstrapGridOptions) => {
   expect(() => validate({ screens })(options)).toThrow();
 };
 
@@ -28,6 +31,7 @@ it('should not throw', () => {
 
 // eslint-disable-next-line vitest/expect-expect
 it('should throw', () => {
+  // @ts-expect-error
   invalid();
   invalid({});
 

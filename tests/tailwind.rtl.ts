@@ -1,25 +1,24 @@
-const config = require('./tailwind.base');
+import config from './tailwind.base';
 
-module.exports = {
+export default {
   ...config,
   safelist: [
     {
       pattern: /./,
-      variants: ['mobile', 'tablet', 'desktop'],
+      variants: ['mobile', 'desktop'],
     },
   ],
   theme: {
     screens: {
       mobile: '1em',
-      tablet: '2em',
-      desktop: '3em',
+      desktop: '2em',
     },
   },
   plugins: [
     require('../lib')({
-      respectImportant: false,
+      gridColumns: 3,
+      rtl: true,
       containerMaxWidths: {},
     }),
   ],
-  important: true,
 };
