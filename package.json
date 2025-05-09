@@ -11,15 +11,14 @@
 		"rtl",
 		"tailwindcss"
 	],
-	"repository": "karolis-sh/tailwind-bootstrap-grid",
+	"repository": "MatthewsBastosBe/tailwind-bootstrap-grid",
 	"license": "MIT",
 	"author": "Karolis Šarapnickis <hi@karolis.sh>",
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
 	"files": [
-		"lib",
-		"types"
+		"build"
 	],
 	"scripts": {
 		"build": "run-p build:*",
