@@ -37,6 +37,7 @@ In your css file:
   respect-important: true;
 }
 ```
+
 This will generate Bootstrap v5 flexbox grid.
 
 \* **NOTE**: When using the `.container` class from this plugin you will need to
