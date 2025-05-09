@@ -18,7 +18,8 @@
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
 	"files": [
-		"dist"
+		"lib",
+		"types"
 	],
 	"scripts": {
 		"build": "run-p build:*",
