@@ -8,11 +8,60 @@ import type { PluginAPI } from 'tailwindcss/plugin';
 import type {
   ContainerMaxWidths,
   GridGutters,
+  TailwindBootstrapGridFlatOptions,
   TailwindBootstrapGridOptions,
 } from '../types';
 
 const DEFAULT_GRID_COLUMNS = 12;
 const DEFAULT_GRID_GUTTER_WIDTH = '1.5rem';
+
+function parsePluginOptions(
+  flatOptions: TailwindBootstrapGridFlatOptions,
+): TailwindBootstrapGridOptions {
+  const parsedOptions: TailwindBootstrapGridOptions = {
+    gridGutters: {},
+    containerMaxWidths: {},
+  };
+
+  for (const [key, value] of Object.entries(flatOptions)) {
+    switch (true) {
+      case key.startsWith('grid-gutters-'): {
+        const gutterKey = key.replace('grid-gutters-', '');
+        (parsedOptions.gridGutters as GridGutters)[gutterKey] = value;
+        break;
+      }
+
+      case key.startsWith('container-max-widths-'): {
+        const widthKey = key.replace('container-max-widths-', '');
+        (parsedOptions.containerMaxWidths as ContainerMaxWidths)[widthKey] =
+          value;
+        break;
+      }
+
+      case key === 'grid-columns':
+        parsedOptions.gridColumns = value;
+        break;
+
+      case key === 'grid-gutter-width':
+        parsedOptions.gridGutterWidth = value;
+        break;
+
+      case key === 'generate-container':
+        parsedOptions.generateContainer = value;
+        break;
+
+      case key === 'rtl':
+        parsedOptions.rtl = value;
+        break;
+
+      case key === 'respect-important':
+        parsedOptions.respectImportant = value;
+        break;
+    }
+  }
+
+  return parsedOptions;
+}
 
 export default plugin.withOptions(
   (pluginOptions: TailwindBootstrapGridOptions) => (options: PluginAPI) => {
@@ -20,25 +69,9 @@ export default plugin.withOptions(
     const screens = config('theme.screens');
     const important = config('important');
 
-    const parsedOptions = {
-      ...pluginOptions,
-      gridGutters: { 0: 0 } as GridGutters,
-      containerMaxWidths: {} as ContainerMaxWidths,
-    };
-
-    for (const [key, value] of Object.entries(pluginOptions)) {
-      if (key.startsWith('grid-gutters-')) {
-        const gutterKey = key.replace('grid-gutters-', '');
-        parsedOptions.gridGutters[gutterKey] = value;
-        delete parsedOptions[key as keyof typeof parsedOptions];
-      }
-
-      if (key.startsWith('container-max-widths-')) {
-        const widthKey = key.replace('container-max-widths-', '');
-        parsedOptions.containerMaxWidths[widthKey] = value;
-        delete parsedOptions[key as keyof typeof parsedOptions];
-      }
-    }
+    const parsedOptions = parsePluginOptions(
+      pluginOptions as TailwindBootstrapGridFlatOptions,
+    );
 
     const {
       gridColumns,
@@ -84,7 +117,6 @@ export default plugin.withOptions(
         ? `${value} !important`
         : value;
 
-    // biome-ignore lint/complexity/noUselessLoneBlockStatements: <explanation>
     {
       // =============================================================================================
       // Container
@@ -125,7 +157,6 @@ export default plugin.withOptions(
       }
     }
 
-    // biome-ignore lint/complexity/noUselessLoneBlockStatements: <explanation>
     {
       // =============================================================================================
       // Row
@@ -155,7 +186,6 @@ export default plugin.withOptions(
       );
     }
 
-    // biome-ignore lint/complexity/noUselessLoneBlockStatements: <explanation>
     {
       // =============================================================================================
       // Columns
@@ -198,7 +228,6 @@ export default plugin.withOptions(
       );
     }
 
-    // biome-ignore lint/complexity/noUselessLoneBlockStatements: <explanation>
     {
       // =============================================================================================
       // Offsets
@@ -227,7 +256,6 @@ export default plugin.withOptions(
       );
     }
 
-    // biome-ignore lint/complexity/noUselessLoneBlockStatements: <explanation>
     {
       // =============================================================================================
       // Gutters
@@ -253,7 +281,6 @@ export default plugin.withOptions(
       }
     }
 
-    // biome-ignore lint/complexity/noUselessLoneBlockStatements: <explanation>
     {
       // =============================================================================================
       // Ordering
