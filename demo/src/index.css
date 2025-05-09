@@ -1,21 +1,22 @@
 @import 'tailwindcss';
 @plugin "../../lib/" {
-  gridColumns: 12;
-  gridGutterWidth: '1.5rem';
-  gridGutters-0: 0;
-  gridGutters-1: 0.25rem;
-  gridGutters-2: 0.5rem;
-  gridGutters-3: 1rem;
-  gridGutters-4: 1.5rem;
-  gridGutters-5: 3rem;
-  generateContainer: true;
-  containerMaxWidths-sm: 540px;
-  containerMaxWidths-md: 720px;
-  containerMaxWidths-lg: 960px;
-  containerMaxWidths-xl: 1140px;
-  containerMaxWidths-xxl: 1320px;
+  grid-columns: 12;
+  grid-gutter-width: '1.5rem';
+  grid-gutters-0: 0;
+  grid-gutters-1: 0.25rem;
+  grid-gutters-2: 0.5rem;
+  grid-gutters-3: 1rem;
+  grid-gutters-4: 1.5rem;
+  grid-gutters-5: 3rem;
+  generate-container: true;
+  container-max-widths-sm: 540px;
+  container-max-widths-md: 720px;
+  container-max-widths-lg: 960px;
+  container-max-widths-xl: 1140px;
+  container-max-widths-xxl: 1320px;
   rtl: true;
-  respectImportant: true;
+  respect-important: true;
+  important: true;
 }
 
 @theme {

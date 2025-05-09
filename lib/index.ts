@@ -27,14 +27,14 @@ export default plugin.withOptions(
     };
 
     for (const [key, value] of Object.entries(pluginOptions)) {
-      if (key.startsWith('gridGutters-')) {
-        const gutterKey = key.replace('gridGutters-', '');
+      if (key.startsWith('grid-gutters-')) {
+        const gutterKey = key.replace('grid-gutters-', '');
         parsedOptions.gridGutters[gutterKey] = value;
         delete parsedOptions[key as keyof typeof parsedOptions];
       }
 
-      if (key.startsWith('containerMaxWidths-')) {
-        const widthKey = key.replace('containerMaxWidths-', '');
+      if (key.startsWith('container-max-widths-')) {
+        const widthKey = key.replace('container-max-widths-', '');
         parsedOptions.containerMaxWidths[widthKey] = value;
         delete parsedOptions[key as keyof typeof parsedOptions];
       }
