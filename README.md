@@ -14,32 +14,29 @@ Check the [demo](https://tailwind-bootstrap-grid.netlify.app/).
 npm i -D tailwind-bootstrap-grid
 ```
 
-In `tailwind.js` file:
-
-```js
-module.exports = {
-  plugins: [
-    require('tailwind-bootstrap-grid')({
-      containerMaxWidths: {
-        sm: '540px',
-        md: '720px',
-        lg: '960px',
-        xl: '1140px',
-      },
-    }),
-  ],
-};
-```
-
-And don't forget to include `components` and `utilities` in your tailwind base
-css file:
+In your css file:
 
 ```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin "tailwind-bootstrap-grid" {
+  grid-columns: 12;
+  grid-gutter-width: '1.5rem';
+  grid-gutters-0: 0;
+  grid-gutters-1: 0.25rem;
+  grid-gutters-2: 0.5rem;
+  grid-gutters-3: 1rem;
+  grid-gutters-4: 1.5rem;
+  grid-gutters-5: 3rem;
+  generate-container: true;
+  container-max-widths-sm: 540px;
+  container-max-widths-md: 720px;
+  container-max-widths-lg: 960px;
+  container-max-widths-xl: 1140px;
+  container-max-widths-xxl: 1320px;
+  rtl: true;
+  respect-important: true;
+}
 ```
-
 This will generate Bootstrap v5 flexbox grid.
 
 \* **NOTE**: When using the `.container` class from this plugin you will need to
