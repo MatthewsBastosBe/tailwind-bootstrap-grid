@@ -14,11 +14,11 @@
 	"repository": "karolis-sh/tailwind-bootstrap-grid",
 	"license": "MIT",
 	"author": "Karolis Šarapnickis <hi@karolis.sh>",
-	"main": "lib/index.ts",
-	"types": "types/index.ts",
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
 	"files": [
-		"lib",
-		"types"
+		"dist"
 	],
 	"scripts": {
 		"build": "run-p build:*",
@@ -28,6 +28,7 @@
 		"build:sample:prefix-separator": "cd samples/prefix-separator && NODE_ENV=production tailwindcss --no-autoprefixer -i input.css -o output.css",
 		"build:sample:purge": "cd samples/purge && NODE_ENV=production tailwindcss -i input.css -o output.css",
 		"build:sample:tw-default": "cd samples/tw-default && NODE_ENV=production tailwindcss -i input.css -o output.css",
+		"build:tsup": "tsup",
 		"clean": "rm -rf build && rm -rf samples/*/output.css",
 		"commit": "cz",
 		"dev": "cd demo && vite",
