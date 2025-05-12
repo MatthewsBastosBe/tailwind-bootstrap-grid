@@ -39,6 +39,6 @@ export interface TailwindBootstrapGridOptions {
   respectImportant?: boolean;
 }
 
-export type TailwindBootstrapGridPlugin = (
+export type TailwindBootstrapGrid = (
   options?: TailwindBootstrapGridOptions,
 ) => PluginCreator;
