@@ -11,7 +11,7 @@ Check the [demo](https://tailwind-bootstrap-grid.netlify.app/).
 ## Installation
 
 ```shell
-npm i -D tailwind-bootstrap-grid
+npm i -D @mattbastos/tailwind-bootstrap-grid
 ```
 
 In your css file:
