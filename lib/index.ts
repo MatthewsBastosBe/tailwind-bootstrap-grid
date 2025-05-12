@@ -30,30 +30,24 @@ function parsePluginOptions(
         (parsedOptions.gridGutters as GridGutters)[gutterKey] = value;
         break;
       }
-
       case key.startsWith('container-max-widths-'): {
         const widthKey = key.replace('container-max-widths-', '');
         (parsedOptions.containerMaxWidths as ContainerMaxWidths)[widthKey] =
           value;
         break;
       }
-
       case key === 'grid-columns':
         parsedOptions.gridColumns = value;
         break;
-
       case key === 'grid-gutter-width':
         parsedOptions.gridGutterWidth = value;
         break;
-
       case key === 'generate-container':
         parsedOptions.generateContainer = value;
         break;
-
       case key === 'rtl':
         parsedOptions.rtl = value;
         break;
-
       case key === 'respect-important':
         parsedOptions.respectImportant = value;
         break;

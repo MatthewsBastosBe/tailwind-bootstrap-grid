@@ -9,7 +9,7 @@ export default defineConfig({
   root: './src',
   base: './',
   build: {
-    outDir: path.resolve(__dirname, '../build'),
+    outDir: path.resolve(__dirname, '../demo-build'),
     emptyOutDir: true,
   },
   server: {
