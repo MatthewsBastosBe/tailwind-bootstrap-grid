@@ -14,7 +14,7 @@
 	"repository": "MatthewsBastosBe/tailwind-bootstrap-grid",
 	"license": "MIT",
 	"author": "Karolis Šarapnickis <hi@karolis.sh>",
-	"main": "build/index.cjs",
+	"main": "build/index.js",
 	"module": "build/index.mjs",
 	"types": "build/index.d.ts",
 	"files": [

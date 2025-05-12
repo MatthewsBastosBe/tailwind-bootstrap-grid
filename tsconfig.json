@@ -8,6 +8,7 @@
     "skipLibCheck": true,
     "outDir": "./build",
     "declaration": true,
+    "emitDeclarationOnly": true,
     "typeRoots": ["./types", "./node_modules/@types"]
   },
   "include": ["lib"]
