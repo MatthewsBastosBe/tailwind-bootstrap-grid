@@ -57,7 +57,7 @@ function parsePluginOptions(
   return parsedOptions;
 }
 
-module.exports = plugin.withOptions(
+export default plugin.withOptions(
   (pluginOptions: TailwindBootstrapGridOptions) => (options: PluginAPI) => {
     const { addComponents, addBase, config } = options;
     const screens = config('theme.screens');
