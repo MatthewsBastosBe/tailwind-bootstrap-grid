@@ -4,6 +4,7 @@ package.json
 
 # project
 /build
+/demo-build
 /samples/*/output.css
 CHANGELOG.md
 .husky/_/
