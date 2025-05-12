@@ -11,5 +11,5 @@
     "emitDeclarationOnly": true,
     "typeRoots": ["./types", "./node_modules/@types"]
   },
-  "include": ["lib"]
+  "include": ["lib", "types"]
 }
