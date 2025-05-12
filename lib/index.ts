@@ -92,9 +92,7 @@ export default plugin.withOptions(
 
     if (generateContainer) {
       console.warn(
-        `⚠️  The ${picocolors.yellow(
-          'container',
-        )} core plugin is enabled and you're also generating ${picocolors.green(
+        `⚠️  You're generating the ${picocolors.green(
           '.container',
         )} class with the ${picocolors.bold(
           'tailwind-bootstrap-grid',
